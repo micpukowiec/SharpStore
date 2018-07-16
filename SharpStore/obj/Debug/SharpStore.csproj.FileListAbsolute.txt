@@ -1,0 +1,14 @@
+E:\Projekt\SharpStore\SharpStore\bin\Debug\SharpStore.exe.config
+E:\Projekt\SharpStore\SharpStore\bin\Debug\SharpStore.exe
+E:\Projekt\SharpStore\SharpStore\bin\Debug\SharpStore.pdb
+E:\Projekt\SharpStore\SharpStore\obj\Debug\SharpStore.csprojAssemblyReference.cache
+E:\Projekt\SharpStore\SharpStore\obj\Debug\SharpStore.csproj.CoreCompileInputs.cache
+E:\Projekt\SharpStore\SharpStore\obj\Debug\SharpStore.exe
+E:\Projekt\SharpStore\SharpStore\obj\Debug\SharpStore.pdb
+E:\Puki\Repos\SharpStore\SharpStore\bin\Debug\SharpStore.exe.config
+E:\Puki\Repos\SharpStore\SharpStore\bin\Debug\SharpStore.exe
+E:\Puki\Repos\SharpStore\SharpStore\bin\Debug\SharpStore.pdb
+E:\Puki\Repos\SharpStore\SharpStore\obj\Debug\SharpStore.csprojAssemblyReference.cache
+E:\Puki\Repos\SharpStore\SharpStore\obj\Debug\SharpStore.csproj.CoreCompileInputs.cache
+E:\Puki\Repos\SharpStore\SharpStore\obj\Debug\SharpStore.exe
+E:\Puki\Repos\SharpStore\SharpStore\obj\Debug\SharpStore.pdb

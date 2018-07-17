@@ -18,7 +18,9 @@ Lista wszystkich klientów dodatkowo zawiera listę produktów które kupił kli
 
 
 
-
+//TODO: Formatowanie kodu jest bardzo istotne skoro inni mają go czytać i się w nim rozeznać dlatego używaj skrótu klawiszowego do formatowania kodu ctrl+k, ctrl+d ctrl+k przechodzi w specjalny tryb a ctrl + d formatuje kod
+//TODO: Istotne jest dzielenie programu na metody i nazywanie je w odpowiedni sposób tak żeby łatwiej pracowało się w zespole nie przyjemne jest czytanie metod któe nie mieszczą się na jednym ekranie 
+//TODO: Pełno enterów w kodzie strasznie uprzykrza życie czytającym
 
 
 namespace SharpStore
@@ -29,9 +31,11 @@ namespace SharpStore
         {
             List<Klient> ListaKlientow = new List<Klient>();
             List<Produkt> ListaProduktow = new List<Produkt>();
+            //TODO: bardziej eleganckie jest zastosowanie while(Wykonuj) i zmienienie wartosci na false jak chcemy wyjsc z programu nie korzystamy z instrukcji goto!!!
             for (; ; )
             {
                 Console.WriteLine("MENU \nCo chcesz zrobić?\n1. Wyswietl liste produktow\n2. Wyswietl liste klientow\n3. Wyswietl liste zakupow klienta\n4. Kup\n5. Dodaj Produkt\n6. Dodaj Klienta \n7. Edytuj...\n0. Wyjscie z programu");
+                //TODO: Ta sama sytuacja znów będzie błąd
                 int wybor = int.Parse(Console.ReadLine());
 
                 switch (wybor)
@@ -73,44 +77,49 @@ namespace SharpStore
                         }
                     case 4:
                         {
-                            
-                            
-                                Console.Clear();
-                                string szukany_imie, szukany_nazwisko;
-                                Console.WriteLine("Podaj imie klienta, ktory dokonuje zakupu");
-                                szukany_imie = Console.ReadLine();
-                                Console.WriteLine("Podaj nazwisko klienta, ktory dokonuje zakupu");
-                                szukany_nazwisko = Console.ReadLine();
-                                if (Klient.CzyKlientIstnieje(ListaKlientow, szukany_imie, szukany_nazwisko))
-                                {
-                                    DodajDoZakupu:
-                                
-                                    Console.Clear();
-                                    Console.WriteLine("Podaj nazwe produktu");
-                                    string nazwa = Console.ReadLine();
-                                    Console.WriteLine("Podaj ilosc sztuk");
-                                    int sztuki = int.Parse(Console.ReadLine());
-                                    if (Produkt.CzyJestNaStanie(ListaProduktow, nazwa, sztuki))
-                                    {
-                                        Klient.ZnajdzKlienta(ListaKlientow, szukany_imie, szukany_nazwisko).Kup(ListaProduktow, nazwa, sztuki);
-                                    }
-                                    Console.WriteLine("Czy chcesz dodać kolejny produkt?\n1. Tak\n2. Nie");
-                                    int wybrano = int.Parse(Console.ReadLine());
-                                    switch(wybrano)
-                                    {
-                                        case 1: { goto DodajDoZakupu;
-                                            break; }
-                                        case 2: { break; }
-                                    }
-                                         
 
-                                
+
+                            Console.Clear();
+                            string szukany_imie, szukany_nazwisko;
+                            Console.WriteLine("Podaj imie klienta, ktory dokonuje zakupu");
+                            szukany_imie = Console.ReadLine();
+                            Console.WriteLine("Podaj nazwisko klienta, ktory dokonuje zakupu");
+                            szukany_nazwisko = Console.ReadLine();
+                            if (Klient.CzyKlientIstnieje(ListaKlientow, szukany_imie, szukany_nazwisko))
+                            {
+                            DodajDoZakupu:
+
+                                Console.Clear();
+                                Console.WriteLine("Podaj nazwe produktu");
+                                string nazwa = Console.ReadLine();
+                                Console.WriteLine("Podaj ilosc sztuk");
+                                int sztuki = int.Parse(Console.ReadLine());
+                                if (Produkt.CzyJestNaStanie(ListaProduktow, nazwa, sztuki))
+                                {
+                                    Klient.ZnajdzKlienta(ListaKlientow, szukany_imie, szukany_nazwisko).Kup(ListaProduktow, nazwa, sztuki);
                                 }
-                                
-                                
-   
-                                
-                            
+                                Console.WriteLine("Czy chcesz dodać kolejny produkt?\n1. Tak\n2. Nie");
+                                int wybrano = int.Parse(Console.ReadLine());
+                                switch (wybrano)
+                                {
+                                    case 1:
+                                        {
+                                            //TODO: NIE MOZE BYC ZADNYCH INSTRUKCJI SKOKU W ZADNYM TWOIM PROGRAMIE!!!! TO JEST COS CO STOSUJE SIE W ASEMBLERZE NIGDZIE INDZIEJ
+                                            goto DodajDoZakupu;
+                                            //TODO: instrukcja która nigdy się nie wykona zabiera jedynie miejsce
+                                            break;
+                                        }
+                                    case 2: { break; }
+                                }
+
+
+
+                            }
+
+
+                            //TODO: Pełno pustej przestrzeni
+
+
                             break;
                         }
                     case 5:

@@ -8,6 +8,7 @@ namespace SharpStore
 {
     public class Produkt
     {
+        //TODO: Polecam zapoznanie się z typami frameworka .Net String Int32 Single Datetime itp.
         public string nazwa_produktu;
         public int ilosc;
         public Produkt()
@@ -26,6 +27,7 @@ namespace SharpStore
             Console.WriteLine("Podaj nazwe produktu");
             nazwa_produktu = Console.ReadLine();
             Console.WriteLine("Podaj ilosc sztuk");
+            //TODO: Jeśli uyżytkownik poda wartość która nie jest int aplikacja przestanie działać wykorzystaj TryParse albo blok try catch dla całej operacji
             ilosc = int.Parse(Console.ReadLine());
         }
         public void WyswietlProdukt()
@@ -38,6 +40,7 @@ namespace SharpStore
             {
                 Produkt produkt = new Produkt();
                 produkt = ListaProduktow.Find(x => x.nazwa_produktu == szukany_nazwa);
+                //TODO: w metodach boolean możesz zwracać jako wynik wyrażenie które jest w if bo prawdopodobnie wyzej znow bedziesz sprawdzał ifem w ten sposób zminimalizujesz ilośc instrukcji skoku a kod będzie bardziej czytelny
                 if(produkt.ilosc>=szukany_ilosc)
                 {
                     return true;
